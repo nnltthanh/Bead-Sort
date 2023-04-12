@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/two.js/0.6.0/two.min.js"></script>
+    <link rel="stylesheet" href="css/style.css"/>
+    <title>BeadSort</title>
+</head>
+
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/two.js/0.6.0/two.min.js"></script>
+        <link rel="stylesheet" href="css/style.css"/>
+        <title>BeadSort!</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="navbar">
+                <div id="title">Bead Sort</div>
+           
+                <div id="name" style="right: 0%; max-width: 70%;">Nguyễn Ngọc Lam Thanh - B2012255 </div>
+            </div>
+        </header>
+
+        <main style="width: 100%;">
+            <div id="bead-table">
+                    <!-- <svg width="1200" height="50" >
+                        
+                    </svg>
+                 -->
+                
+                    <svg id="bead-svg" style="width: 1000px; height: 880px; "> 
+                        <!-- <rect width="990" height="50" rx="30" ry="30" style="fill:rgb(0, 0, 0);" /> -->
+                        <rect width="900" height="35" rx="5" ry="5" x="30" y="830" style="fill:rgb(47, 7, 7);" />
+                        <rect width="990" height="35" rx="30" ry="30" x="0" y="850" style="fill:rgb(0, 0, 0);" />
+                    </svg>
+                <svg id="coor"  style="width: 100px; height: 880px; ">
+                    
+                </svg>
+                
+                <svg id="synbol" height="500" width="300" >
+                    <circle class="cGreen" fill = "green" cx="100" cy="30" r="30"></circle>  <g> <text x="150" y="40" font-size="30" font-weight="bold" font-family="Arial" fill="green" style="text-align: center;">Sorted</text> </g>
+                    <circle class="cBrown" fill="rgb(158, 76, 13)" cx="100" cy="100" r="30"></circle> <g> <text x="150" y="110" font-size="30" font-weight="bold" font-family="Arial" fill="rgb(158, 76, 13)" style="text-align: center;">Sorting</text> </g>
+                    <circle class="cBlack" fill = "black" cx="100" cy="170" r="30"></circle> <g> <text x="150" y="180" font-size="30" font-weight="bold" font-family="Arial" fill="black" style="text-align: center;"> Unsorted </text> </g>
+                </svg>
+            </div>
+
+            
+        </main>
+        <div id="code">
+            <br> <br> <br> 
+            <div class="codecmd" id="code-1">1 &nbsp <span style="color: deeppink;">async function</span> <span style="color: rgb(0, 208, 31);"> beadSort(<span style="color: rgb(236, 130, 11);font-style: italic; font-weight: 500">numberList</span>)&#123;</div>
+            <!-- <div class="codecmd" id="code-2">2 &emsp;&emsp;
+                <span>
+                    &emsp;<span style="color: deeppink;">if</span>(!isSorting) { <br>
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;beadsTable = initBeadsTable(<span style="color: rgb(236, 130, 11);font-style: italic; font-weight: 500">numberList</span>).beads; <br>
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;removeBeadsTable(<span style="color: rgb(236, 130, 11);font-style: italic; font-weight: 500">numberList</span>.length); <br>
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;max = initBeadsTable(<span style="color: rgb(236, 130, 11);font-style: italic; font-weight: 500">numberList</span>).max; <br>
+                        &emsp;&emsp;&emsp;&emsp;&emsp;}
+                </span>	</div> -->
+
+            <div class="codecmd" id="code-3">3 &emsp;&emsp;&emsp;&emsp;<span style="color: deeppink;">for</span> (<span style="color: deeppink;">let</span> j = 0; j < max; j++) 	&#123;</div>
+            <div class="codecmd" id="code-4">4 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span style="color: deeppink;">var</span> sum = 0; </div>
+            <div class="codecmd" id="code-5">5 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span style="color: deeppink;">for</span> (<span style="color: deeppink;">let</span> i = 0; i < <span style="color: rgb(236, 130, 11);font-style: italic; font-weight: 500">numberList</span>.length; i++) {
+                <br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;sum += beadsTable[i][j]; 
+                <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;} </div>
+            <div class="codecmd" id="code-6">6 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span style="color: deeppink;">for</span> (<span style="color: deeppink;">let</span> i = 0; i < <span style="color: rgb(236, 130, 11);font-style: italic; font-weight: 500">numberList</span>.length; i++) {</div>
+
+            <div class="codecmd" id="code-7">7 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span style="color: deeppink;">let</span> count = 0;</div>
+            <div class="codecmd" id="code-8">8 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span style="color: deeppink;">if</span>  (sum > 0 && beadsTable[i][j] == 1) {</div>
+            <div class="codecmd" id="code-9">9 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span style="color: deeppink;">for</span> (<span style="color: deeppink;">let</span>  k = 1; k <= i; k++) {</div>
+            <div class="codecmd" id="code-10">10&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span style="color: deeppink;">if</span>  (beadsTable[i - k][j] == 0) { <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;count++;
+              }
+            <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;} </div>
+            <br>
+            <div class="codecmd" id="code-11">11 
+                <span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;dropBead(i + 1, j + 1, count);
+                <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;beadsTable[i][j] = 0;
+                <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;beadsTable[i - count][j] = 1; <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;            </span>
+                &emsp;&emsp;&emsp;} <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;            </span>
+                &emsp;} <br> &emsp;&emsp;&emsp;&emsp;      </span>
+                &emsp;} </div>
+            <br>
+            <div class="codecmd" id="code-12">12 &emsp;&emsp;
+                <span>
+                    <span style="color: deeppink;">for</span>  (<span style="color: deeppink;">let</span>  i = 0; i < <span style="color: rgb(236, 130, 11);font-style: italic; font-weight: 500">numberList</span>.length; i++) {<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;                    
+                        <span style="color: rgb(236, 130, 11);font-style: italic; font-weight: 500">numberList</span>[i] = sumBeads(beadsTable[i]);<br>&emsp;&emsp;&emsp;&emsp;
+                    }
+                </span>	<br>&emsp;&emsp;
+            }</div>
+          </div>
+        <footer style="width: 100%;">
+            <div id="controller">
+                <label for="quantity" style="color: white; font-size: 20pt; font-weight: bold;">Input Value</label>
+                <input type="text" id="numInput" name="quantity" min="1" max="15" value="1">
+                
+                <!-- <input type="number" min="1" max="15" id="numInput"/> -->
+
+                <button class="btn" id="reset" >Reset</button>
+                <!-- <button id="upload" class="btn" onclick="document.getElementById('uploader').click();">Upload a file</button>
+                <input type="file" name="uploader" id="uploader" style="display: none;"/> -->
+            
+    
+            <button class="btn" id="play" style="display: '' ; padding-top: 15px; width: 60px; height: 60px;"> 
+                <img src="./img/play-buttton.png" alt="" width="25px">
+            </button>
+            <button class="btn" id="pause" style="display: none; padding-left: 18px;padding-top: 15px; width: 60px; height: 60px;">
+                <img src="./img/pause.png" alt="" width="25px">
+            </button>   
+    
+            <div style="margin-top: 20px; text-align: center; display: inline-block; font-size: 20px; margin-left: 50px;">
+               <p style="color: white; font-weight: bold; font-family: Arial, Helvetica, sans-serif; display: inline-block; ">Max Value</p>
+                <input type="range" name="" id="size" value="15" min="2" max="20" step="1">
+    
+            <p id="sizeNumber">15</p>
+    
+            <p style="color: white; font-weight: bold; font-family: Arial, Helvetica, sans-serif; display: inline-block; margin-left: 40px;">Speed</p>
+                <input type="range" name="" id="speed" value="1" min="1" max="20" step="1">
+    
+            <p id="speedNumber">x1</p>
+            </div>
+        </div>
+        </footer>
+        
+
+        <!-- <div id="instructions">
+            <h1>BeadSort</h1>
+
+            <input type="number" min="1" max="24" id="numInput"/>
+            <a id="addNumber">Add Number</a>
+            <a id="sort">Sort Numbers</a>
+            <a id="reset">Reset</a>
+            <div>
+                X:<div id="x-coor" style="color: red;"></div>
+                Y:<div id="y-coor" style="color: red;"></div>
+            </div>
+        </div> -->
+        <script src="js/sort.js"></script>
+    </body>
+</html>
